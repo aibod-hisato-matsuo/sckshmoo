@@ -3,7 +3,7 @@ import re
 import sys
 from pathlib import Path
 from collections import defaultdict, Counter
-from shmooapp.analysis.common_utils import VDD_PATTERNS,generate_aggfile_name
+from analysis.common_utils import VDD_PATTERNS,generate_aggfile_name
 
 def _extract_y_axis_info(lines):
     """
