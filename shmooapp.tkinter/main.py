@@ -38,13 +38,13 @@ def run_all_tests(filepath):
         aggregation_file_or = process_aggregation(test,"OR")
         aggregation_file_and = process_aggregation(test,"AND")
         aggregation_file_mj = process_aggregation(test,"Majority")
-        read_plots_agg(aggregation_file_or, aggregation_file_and, aggregation_file_mj)
+        agg_texts = read_plots_agg(aggregation_file_or, aggregation_file_and, aggregation_file_mj)
         xordir_or = process_xor(test,aggregation_file_or,"OR_XOR")
         xordir_and = process_xor(test,aggregation_file_and,"AND_XOR")
         xordir_mj = process_xor(test,aggregation_file_mj,"MajorityVote_XOR")
-        read_plots_xor(xordir_or)
-        read_plots_xor(xordir_and)
-        read_plots_xor(xordir_mj)
+        xor_or_texts = read_plots_xor(xordir_or)
+        xor_and_texts = read_plots_xor(xordir_and)
+        xor_mj_texts = read_plots_xor(xordir_mj)
 
 
     display_subdirs(subdirs)

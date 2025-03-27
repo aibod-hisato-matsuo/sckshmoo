@@ -82,6 +82,8 @@ def update_shmoo_log(file_path, output_path):
     with open(output_path, 'w') as file:
         file.writelines(updated_lines)
 
+    print(f"Updated Range: {os.path.basename(file_path)}")
+
 def update_files_for_range(input_directory):
     # Process all .log files in the input directory
     for filename in sorted(os.listdir(input_directory)):

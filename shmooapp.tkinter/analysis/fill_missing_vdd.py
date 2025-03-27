@@ -126,7 +126,7 @@ def process_log_file(file_path):
     with open(file_path, 'w') as file:
         file.writelines(modified_lines)
 
-    print(f"Processed and updated: {os.path.basename(file_path)}")
+    print(f"Updated VDD: {os.path.basename(file_path)}")
 
 def update_files_for_vdd(input_directory):
     # Process all .log files in the input directory
