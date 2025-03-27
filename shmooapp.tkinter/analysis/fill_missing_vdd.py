@@ -1,7 +1,6 @@
 import os
 import re
 from analysis.common_utils import VDD_PATTERNS, extract_y_axis_info
-from analysis.update_shmoo_range import update_shmoo_log
 
 
 def sanitize_filename(filename):
@@ -135,4 +134,3 @@ def update_files_for_vdd(input_directory):
         if filename.endswith('.log'):
             file_path = os.path.join(input_directory, filename)
             process_log_file(file_path)
-            update_shmoo_log(file_path,file_path)

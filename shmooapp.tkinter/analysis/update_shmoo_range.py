@@ -22,7 +22,8 @@ def calculate_ns_range(shmoo_str, start_ns=5.0, step_ns=5.0):
         return (min_ns, max_ns)
     return None
 
-def update_shmoo_log(file_path, output_path):
+#def update_shmoo_log(file_path, output_path):
+def update_shmoo_log(file_path):
     """
     Reads the Shmoo Plot log file, updates the min and max ns values for each voltage line,
     and writes the changes back to the file.
@@ -79,7 +80,8 @@ def update_shmoo_log(file_path, output_path):
             updated_lines.append(line)
 
     # Write the updated lines back to the file
-    with open(output_path, 'w') as file:
+    #with open(output_path, 'w') as file:
+    with open(file_path, 'w') as file:
         file.writelines(updated_lines)
 
     print(f"Updated Range: {os.path.basename(file_path)}")
@@ -89,7 +91,7 @@ def update_files_for_range(input_directory):
     for filename in sorted(os.listdir(input_directory)):
         if filename.endswith('.log'):
             file_path = os.path.join(input_directory, filename)
-            update_shmoo_log(file_path,file_path)
+            update_shmoo_log(file_path)
 
 
 
