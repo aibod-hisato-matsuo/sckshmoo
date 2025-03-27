@@ -1,6 +1,12 @@
+import os
 import tkinter as tk
 from tkinter import filedialog, scrolledtext, Listbox
 from analysis.create_shmooplot_files import extract_test_results
+from analysis.fill_missing_vdd import update_files_for_vdd
+from analysis.update_shmoo_range import update_files_for_range
+from analysis.calculate_margin import calculate_files_for_margin
+from analysis.aggregated_shmoo import process_aggregation
+from analysis.xor_shmoo import process_xor
 
 PLOTSDIR = "out.plot"
 ARCHIVEDIR = "out.archive"
@@ -23,10 +29,54 @@ def select_file():
             display_output(f"Error reading file: {e}")
 
 def run_all_tests(filepath):
-    subdirs = []
     subdirs = extract_test_results(filepath,PLOTSDIR)
+    for test in subdirs:
+        update_files_for_vdd(test)
+        update_files_for_range(test)
+        margin_sets = calculate_files_for_margin(test)
+        read_plots(test)
+        aggregation_file_or = process_aggregation(test,"OR")
+        aggregation_file_and = process_aggregation(test,"AND")
+        aggregation_file_mj = process_aggregation(test,"Majority")
+        read_plots_agg(aggregation_file_or, aggregation_file_and, aggregation_file_mj)
+        xordir_or = process_xor(test,aggregation_file_or,"OR_XOR")
+        xordir_and = process_xor(test,aggregation_file_and,"AND_XOR")
+        xordir_mj = process_xor(test,aggregation_file_mj,"MajorityVote_XOR")
+        read_plots_xor(xordir_or)
+        read_plots_xor(xordir_and)
+        read_plots_xor(xordir_mj)
+
+
     display_subdirs(subdirs)
     display_output(f"Found {len(subdirs)} subdirectories.")
+
+def read_plots(directory: str):
+    subfiles = sorted(os.listdir(directory))
+    subfile_texts = []
+    for file in subfiles:
+        filepath = os.path.join(directory,file)
+        with open(filepath,encoding='UTF-8') as f:
+            text = f.read()
+        subfile_texts.append(text)
+    return subfile_texts
+
+def read_plots_agg(or_file,and_file,mj_file):
+    aggfile_texts = []
+    for filepath in [or_file,and_file,mj_file]:
+        with open(filepath,encoding='UTF-8') as f:
+            text = f.read()
+        aggfile_texts.append(text)
+    return aggfile_texts
+
+def read_plots_xor(xordir):
+    xorfile_texts = []
+    xorfiles = sorted(os.listdir(xordir))
+    for file in xorfiles:
+        filepath = os.path.join(xordir,file)
+        with open(filepath,encoding='UTF-8') as f:
+            text = f.read()
+        xorfile_texts.append(text)
+    return xorfile_texts
 
 def display_output(text):
     output_text.delete("1.0", tk.END)
@@ -42,11 +92,6 @@ def on_subdir_button_click(subdir):
     # TODO: Add more functionality as needed
     # For example, open the subdirectory, process files, etc.
 
-#def display_subdirs(subdirs):
-#    # Clear the Listbox before inserting new items
-#    subdirs_listbox.delete(0, tk.END)
-#    for subdir in subdirs:
-#        subdirs_listbox.insert(tk.END, subdir)
 def display_subdirs(subdirs):
     """
     Display each subdirectory as a button within the subdirs_frame.

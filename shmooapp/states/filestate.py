@@ -154,7 +154,8 @@ class FileState(rx.State):
     def p02_read_plots_xor(self):
         self.xorfile_texts = []
         self.xorfiles = sorted(os.listdir(self.xordir))
-        for file in self.subfiles:
+        #for file in self.subfiles:
+        for file in self.xorfiles:
             filepath = os.path.join(self.xordir,file)
             with open(filepath,encoding='UTF-8') as f:
                 text = f.read()
