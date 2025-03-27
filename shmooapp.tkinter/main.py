@@ -92,12 +92,12 @@ def display_plots(texts):
     custom_font = tkfont.Font(family="Courier", size=6)
 
     # Clear the output_frame before inserting new texts
-    for widget in output_frame.winfo_children():
+    for widget in output_frame_inner.winfo_children():
         widget.destroy()
 
     # Create a ScrolledText widget for each text and pack it horizontally
     for index, text in enumerate(texts):
-        frame = tk.Frame(output_frame)
+        frame = tk.Frame(output_frame_inner)
         frame.pack(side=tk.LEFT, padx=5, pady=5, fill=tk.BOTH, expand=True)
 
         # Optional: Add a label to identify each text block
