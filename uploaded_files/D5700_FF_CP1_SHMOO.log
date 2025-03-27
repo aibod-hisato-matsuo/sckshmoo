@@ -1,0 +1,552 @@
+****** production report begin ******
+  Started at: 20241219 160542
+  Testflow execution   
+  device           : D5700_dev
+  DUT_path         :  /tmp
+  testflow         : VHJ5700WAAV0_FNS_SHMOO
+  userprocedure    : 
+******* begin testflow report data : *******
+
+INFO: (dataformatter) Using STDF config file:  /etc/opt/hp93000/soc/datalog/formatter.stdf.main.conf
+
+Warning: GDF logging is no longer supported. The GDF files will not be created.
+
+---------- TestMethod Shmoo --------------------------------
+  TITLE  : d5700_ufunc_pg_d_imx224_v768_d3_40_m4_raw_k_v1_02      DATE : Thu Dec 19 16:05:44 2024
+
+  SETUP  : d5700_ufunc_pg_d_imx224_v768_d3_40_m4_raw_k_v1_02 ( /home/prod/CUSTOMER/SONY/AG69_CXD5700_CP1/D5700_MP_8DUT_2PC_241217/D5700_dev/USER_SHMOO/SETUP/ )
+  RESULT : Shmoo_AC_site01 ( /home/prod/CUSTOMER/SONY/AG69_CXD5700_CP1/D5700_MP_8DUT_2PC_241217/D5700_dev/USER_SHMOO/RESULT/ )
+
+.......... Shmoo Parameter ..................................
+  X-Axis:   Period    [   5.000 .. 150.000 ns  ] step   5.000 ns  (  60.000 ns  )
+  Y-Axis:   VDD       [   1.300 ..   0.600 V   ] step  -0.020 V   (   0.971 V   )
+
+  **** Shmoo Plot : d5700_ufunc_pg_d_imx224_v768_d3_40_m4_raw_k_v1_02 *****
+
+--- site 1 / 8 ( execution mode : parallel ) ---
+
+            ----- X-Axis: Period -----
+   Y-Axis  5.000    55.000    105.000     [ns]
+VDD
+            +---------+*--------+--------+
+    1.300   !.PPPPPPPPPPPPPPPPPPPPPPPPPPPP (15.000..      )
+            !.PPPPPPPPPPPPPPPPPPPPPPPPPPPP (15.000..      )
+            !.PPPPPPPPPPPPPPPPPPPPPPPPPPPP (15.000..      )
+            !.PPPPPPPPPPPPPPPPPPPPPPPPPPPP (15.000..      )
+            !.PPPPPPPPPPPPPPPPPPPPPPPPPPPP (15.000..      )
+    1.200   !.PPPPPPPPPPPPPPPPPPPPPPPPPPPP (15.000..      )
+            !.PPPPPPPPPPPPPPPPPPPPPPPPPPPP (15.000..      )
+            !.PPPPPPPPPPPPPPPPPPPPPPPPPPPP (15.000..      )
+            !.PPPPPPPPPPPPPPPPPPPPPPPPPPPP (15.000..      )
+            !.PPPPPPPPPPPPPPPPPPPPPPPPPPPP (15.000..      )
+    1.100   !.PPPPPPPPPPPPPPPPPPPPPPPPPPPP (15.000..      )
+            !.PPPPPPPPPPPPPPPPPPPPPPPPPPPP (15.000..      )
+            !.PPPPPPPPPPPPPPPPPPPPPPPPPPPP (15.000..      )
+            !.PPPPPPPPPPPPPPPPPPPPPPPPPPPP (15.000..      )
+            !.PPPPPPPPPPPPPPPPPPPPPPPPPPPP (15.000..      )
+    1.000   !.PPPPPPPPPPPPPPPPPPPPPPPPPPPP (15.000..      )
+           *!.PPPPPPPPPPPPPPPPPPPPPPPPPPPP (15.000..      )
+            !.PPPPPPPPPPPPPPPPPPPPPPPPPPPP (15.000..      )
+            !.PPPPPPPPPPPPPPPPPPPPPPPPPPPP (15.000..      )
+            !.PPPPPPPPPPPPPPPPPPPPPPPPPPPP (15.000..      )
+    0.900   !..PPPPPPPPPPPPPPPPPPPPPPPPPPP (20.000..      )
+            !..PPPPPPPPPPPPPPPPPPPPPPPPPPP (20.000..      )
+            !..PPPPPPPPPPPPPPPPPPPPPPPPPPP (20.000..      )
+            !...PPPPPPPPPPPPPPPPPPPPPPPPPP (25.000..      )
+            !...PPPPPPPPPPPPPPPPPPPPPPPPPP (25.000..      )
+    0.800   !....PPPPPPPPPPPPPPPPPPPPPPPPP (30.000..      )
+            !....PPPPPPPPPPPPPPPPPPPPPPPPP (30.000..      )
+            !.....PPPPPPPPPPPPPPPPPPPPPPPP (35.000..      )
+            !......PPPPPPPPPPPPPPPPPPPPPPP (40.000..      )
+            !.........!.PPPPPPPPPPPPPPPPPP (65.000..      )
+    0.700   !.........!.........!........!  (      ..      )
+            !.........!.........!........!  (      ..      )
+            !.........!.........!........!  (      ..      )
+            !.........!.........!........!  (      ..      )
+            !.........!.........!........!  (      ..      )
+    0.600   !.........!.........!........!  (      ..      )
+        V   +---------+*--------+--------+
+           5.000    55.000    105.000     [ns]
+
+
+
+---------- TestMethod Shmoo --------------------------------
+  TITLE  : d5700_ufunc_pg_d_imx224_v768_d3_40_m4_raw_k_v1_02      DATE : Thu Dec 19 16:05:44 2024
+
+  SETUP  : d5700_ufunc_pg_d_imx224_v768_d3_40_m4_raw_k_v1_02 ( /home/prod/CUSTOMER/SONY/AG69_CXD5700_CP1/D5700_MP_8DUT_2PC_241217/D5700_dev/USER_SHMOO/SETUP/ )
+  RESULT : Shmoo_AC_site02 ( /home/prod/CUSTOMER/SONY/AG69_CXD5700_CP1/D5700_MP_8DUT_2PC_241217/D5700_dev/USER_SHMOO/RESULT/ )
+
+.......... Shmoo Parameter ..................................
+  X-Axis:   Period    [   5.000 .. 150.000 ns  ] step   5.000 ns  (  60.000 ns  )
+  Y-Axis:   VDD       [   1.300 ..   0.600 V   ] step  -0.020 V   (   0.971 V   )
+
+  **** Shmoo Plot : d5700_ufunc_pg_d_imx224_v768_d3_40_m4_raw_k_v1_02 *****
+
+--- site 2 / 8 ( execution mode : parallel ) ---
+
+            ----- X-Axis: Period -----
+   Y-Axis  5.000    55.000    105.000     [ns]
+VDD
+            +---------+*--------+--------+
+    1.300   !.PPPPPPPPPPPPPPPPPPPPPPPPPPPP (15.000..      )
+            !.PPPPPPPPPPPPPPPPPPPPPPPPPPPP (15.000..      )
+            !.PPPPPPPPPPPPPPPPPPPPPPPPPPPP (15.000..      )
+            !.PPPPPPPPPPPPPPPPPPPPPPPPPPPP (15.000..      )
+            !.PPPPPPPPPPPPPPPPPPPPPPPPPPPP (15.000..      )
+    1.200   !.PPPPPPPPPPPPPPPPPPPPPPPPPPPP (15.000..      )
+            !.PPPPPPPPPPPPPPPPPPPPPPPPPPPP (15.000..      )
+            !.PPPPPPPPPPPPPPPPPPPPPPPPPPPP (15.000..      )
+            !.PPPPPPPPPPPPPPPPPPPPPPPPPPPP (15.000..      )
+            !.PPPPPPPPPPPPPPPPPPPPPPPPPPPP (15.000..      )
+    1.100   !.PPPPPPPPPPPPPPPPPPPPPPPPPPPP (15.000..      )
+            !.PPPPPPPPPPPPPPPPPPPPPPPPPPPP (15.000..      )
+            !.PPPPPPPPPPPPPPPPPPPPPPPPPPPP (15.000..      )
+            !.PPPPPPPPPPPPPPPPPPPPPPPPPPPP (15.000..      )
+            !.PPPPPPPPPPPPPPPPPPPPPPPPPPPP (15.000..      )
+    1.000   !.PPPPPPPPPPPPPPPPPPPPPPPPPPPP (15.000..      )
+           *!.PPPPPPPPPPPPPPPPPPPPPPPPPPPP (15.000..      )
+            !.PPPPPPPPPPPPPPPPPPPPPPPPPPPP (15.000..      )
+            !.PPPPPPPPPPPPPPPPPPPPPPPPPPPP (15.000..      )
+            !..PPPPPPPPPPPPPPPPPPPPPPPPPPP (20.000..      )
+    0.900   !..PPPPPPPPPPPPPPPPPPPPPPPPPPP (20.000..      )
+            !..PPPPPPPPPPPPPPPPPPPPPPPPPPP (20.000..      )
+            !..PPPPPPPPPPPPPPPPPPPPPPPPPPP (20.000..      )
+            !...PPPPPPPPPPPPPPPPPPPPPPPPPP (25.000..      )
+            !...PPPPPPPPPPPPPPPPPPPPPPPPPP (25.000..      )
+    0.800   !....PPPPPPPPPPPPPPPPPPPPPPPPP (30.000..      )
+            !....PPPPPPPPPPPPPPPPPPPPPPPPP (30.000..      )
+            !.....PPPPPPPPPPPPPPPPPPPPPPPP (35.000..      )
+            !.......PPPPPPPPPPPPPPPPPPPPPP (45.000..      )
+            !.........PPPPPPPPPPPPPPPPPPPP (55.000..      )
+    0.700   !.........!.........!........!  (      ..      )
+            !.........!.........!........!  (      ..      )
+            !.........!.........!........!  (      ..      )
+            !.........!.........!........!  (      ..      )
+            !.........!.........!........!  (      ..      )
+    0.600   !.........!.........!........!  (      ..      )
+        V   +---------+*--------+--------+
+           5.000    55.000    105.000     [ns]
+
+
+---------- TestMethod Shmoo --------------------------------
+  TITLE  : d5700_ufunc_pg_d_imx224_v768_d3_40_m4_raw_k_v1_02      DATE : Thu Dec 19 16:05:44 2024
+
+  SETUP  : d5700_ufunc_pg_d_imx224_v768_d3_40_m4_raw_k_v1_02 ( /home/prod/CUSTOMER/SONY/AG69_CXD5700_CP1/D5700_MP_8DUT_2PC_241217/D5700_dev/USER_SHMOO/SETUP/ )
+  RESULT : Shmoo_AC_site03 ( /home/prod/CUSTOMER/SONY/AG69_CXD5700_CP1/D5700_MP_8DUT_2PC_241217/D5700_dev/USER_SHMOO/RESULT/ )
+
+.......... Shmoo Parameter ..................................
+  X-Axis:   Period    [   5.000 .. 150.000 ns  ] step   5.000 ns  (  60.000 ns  )
+  Y-Axis:   VDD       [   1.300 ..   0.600 V   ] step  -0.020 V   (   0.971 V   )
+
+  **** Shmoo Plot : d5700_ufunc_pg_d_imx224_v768_d3_40_m4_raw_k_v1_02 *****
+
+--- site 3 / 8 ( execution mode : parallel ) ---
+
+            ----- X-Axis: Period -----
+   Y-Axis  5.000    55.000    105.000     [ns]
+VDD
+            +---------+*--------+--------+
+    1.300   PPPPPPPPPPPPPPPPPPPPPPPPPPPPPP  (      ..      )
+            PPPPPPPPPPPPPPPPPPPPPPPPPPPPPP  (      ..      )
+            PPPPPPPPPPPPPPPPPPPPPPPPPPPPPP  (      ..      )
+            PPPPPPPPPPPPPPPPPPPPPPPPPPPPPP  (      ..      )
+            PPPPPPPPPPPPPPPPPPPPPPPPPPPPPP  (      ..      )
+    1.200   PPPPPPPPPPPPPPPPPPPPPPPPPPPPPP  (      ..      )
+            !.PPPPPPPPPPPPPPPPPPPPPPPPPPPP (15.000..      )
+            PPPPPPPPPPPPPPPPPPPPPPPPPPPPPP  (      ..      )
+            P.PPPPPPPPPPPPPPPPPPPPPPPPPPPP (10.000..15.000)
+            PPPPPPPPPPPPPPPPPPPPPPPPPPPPPP  (      ..      )
+    1.100   PPPPPPPPPPPPPPPPPPPPPPPPPPPPPP  (      ..      )
+            !PPPPPPPPPPPPPPPPPPPPPPPPPPPPP (10.000..      )
+            !PPPPPPPPPPPPPPPPPPPPPPPPPPPPP (10.000..      )
+            !.PPPPPPPPPPPPPPPPPPPPPPPPPPPP (15.000..      )
+            !.PPPPPPPPPPPPPPPPPPPPPPPPPPPP (15.000..      )
+    1.000   !.PPPPPPPPPPPPPPPPPPPPPPPPPPPP (15.000..      )
+           *!.PPPPPPPPPPPPPPPPPPPPPPPPPPPP (15.000..      )
+            !.PPPPPPPPPPPPPPPPPPPPPPPPPPPP (15.000..      )
+            !.PPPPPPPPPPPPPPPPPPPPPPPPPPPP (15.000..      )
+            !..PPPPPPPPPPPPPPPPPPPPPPPPPPP (20.000..      )
+    0.900   !..PPPPPPPPPPPPPPPPPPPPPPPPPPP (20.000..      )
+            !..PPPPPPPPPPPPPPPPPPPPPPPPPPP (20.000..      )
+            !..PPPPPPPPPPPPPPPPPPPPPPPPPPP (20.000..      )
+            !...PPPPPPPPPPPPPPPPPPPPPPPPPP (25.000..      )
+            !...PPPPPPPPPPPPPPPPPPPPPPPPPP (25.000..      )
+    0.800   !....PPPPPPPPPPPPPPPPPPPPPPPPP (30.000..      )
+            !....PPPPPPPPPPPPPPPPPPPPPPPPP (30.000..      )
+            !.....PPPPPPPPPPPPPPPPPPPPPPPP (35.000..      )
+            !......PPPPPPPPPPPPPPPPPPPPPPP (40.000..      )
+            !.......P.!...PPPPPPPPPPPPPPPP (45.000..75.000)
+    0.700   !.........!.........!........!  (      ..      )
+            !.........!.........!........!  (      ..      )
+            !.........!.........!........!  (      ..      )
+            !.........!.........!........!  (      ..      )
+            !.........!.........!........!  (      ..      )
+    0.600   !.........!.........!........!  (      ..      )
+        V   +---------+*--------+--------+
+           5.000    55.000    105.000     [ns]
+
+
+---------- TestMethod Shmoo --------------------------------
+  TITLE  : d5700_ufunc_pg_d_imx224_v768_d3_40_m4_raw_k_v1_02      DATE : Thu Dec 19 16:05:44 2024
+
+  SETUP  : d5700_ufunc_pg_d_imx224_v768_d3_40_m4_raw_k_v1_02 ( /home/prod/CUSTOMER/SONY/AG69_CXD5700_CP1/D5700_MP_8DUT_2PC_241217/D5700_dev/USER_SHMOO/SETUP/ )
+  RESULT : Shmoo_AC_site04 ( /home/prod/CUSTOMER/SONY/AG69_CXD5700_CP1/D5700_MP_8DUT_2PC_241217/D5700_dev/USER_SHMOO/RESULT/ )
+
+.......... Shmoo Parameter ..................................
+  X-Axis:   Period    [   5.000 .. 150.000 ns  ] step   5.000 ns  (  60.000 ns  )
+  Y-Axis:   VDD       [   1.300 ..   0.600 V   ] step  -0.020 V   (   0.971 V   )
+
+  **** Shmoo Plot : d5700_ufunc_pg_d_imx224_v768_d3_40_m4_raw_k_v1_02 *****
+
+--- site 4 / 8 ( execution mode : parallel ) ---
+
+            ----- X-Axis: Period -----
+   Y-Axis  5.000    55.000    105.000     [ns]
+VDD
+            +---------+*--------+--------+
+    1.300   !.PPPPPPPPPPPPPPPPPPPPPPPPPPPP (15.000..      )
+            !.PPPPPPPPPPPPPPPPPPPPPPPPPPPP (15.000..      )
+            !.PPPPPPPPPPPPPPPPPPPPPPPPPPPP (15.000..      )
+            !.PPPPPPPPPPPPPPPPPPPPPPPPPPPP (15.000..      )
+            !.PPPPPPPPPPPPPPPPPPPPPPPPPPPP (15.000..      )
+    1.200   !.PPPPPPPPPPPPPPPPPPPPPPPPPPPP (15.000..      )
+            !.PPPPPPPPPPPPPPPPPPPPPPPPPPPP (15.000..      )
+            !.PPPPPPPPPPPPPPPPPPPPPPPPPPPP (15.000..      )
+            !.PPPPPPPPPPPPPPPPPPPPPPPPPPPP (15.000..      )
+            !.PPPPPPPPPPPPPPPPPPPPPPPPPPPP (15.000..      )
+    1.100   !.PPPPPPPPPPPPPPPPPPPPPPPPPPPP (15.000..      )
+            !.PPPPPPPPPPPPPPPPPPPPPPPPPPPP (15.000..      )
+            !.PPPPPPPPPPPPPPPPPPPPPPPPPPPP (15.000..      )
+            !.PPPPPPPPPPPPPPPPPPPPPPPPPPPP (15.000..      )
+            !.PPPPPPPPPPPPPPPPPPPPPPPPPPPP (15.000..      )
+    1.000   !.PPPPPPPPPPPPPPPPPPPPPPPPPPPP (15.000..      )
+           *!.PPPPPPPPPPPPPPPPPPPPPPPPPPPP (15.000..      )
+            !.PPPPPPPPPPPPPPPPPPPPPPPPPPPP (15.000..      )
+            !.PPPPPPPPPPPPPPPPPPPPPPPPPPPP (15.000..      )
+            !.PPPPPPPPPPPPPPPPPPPPPPPPPPPP (15.000..      )
+    0.900   !..PPPPPPPPPPPPPPPPPPPPPPPPPPP (20.000..      )
+            !..PPPPPPPPPPPPPPPPPPPPPPPPPPP (20.000..      )
+            !..PPPPPPPPPPPPPPPPPPPPPPPPPPP (20.000..      )
+            !...PPPPPPPPPPPPPPPPPPPPPPPPPP (25.000..      )
+            !...PPPPPPPPPPPPPPPPPPPPPPPPPP (25.000..      )
+    0.800   !....PPPPPPPPPPPPPPPPPPPPPPPPP (30.000..      )
+            !....PPPPPPPPPPPPPPPPPPPPPPPPP (30.000..      )
+            !.....PPPPPPPPPPPPPPPPPPPPPPPP (35.000..      )
+            !......P.PPPPPPPPPPPPPPPPPPPPP (40.000..50.000)
+            !.......P.!.........!........! (45.000..50.000)
+    0.700   !.........!.........!........!  (      ..      )
+            !.........!.........!........!  (      ..      )
+            !.........!.........!........!  (      ..      )
+            !.........!.........!........!  (      ..      )
+            !.........!.........!........!  (      ..      )
+    0.600   !.........!.........!........!  (      ..      )
+        V   +---------+*--------+--------+
+           5.000    55.000    105.000     [ns]
+
+
+---------- TestMethod Shmoo --------------------------------
+  TITLE  : d5700_ufunc_pg_d_imx224_v768_d3_40_m4_raw_k_v1_02      DATE : Thu Dec 19 16:05:44 2024
+
+  SETUP  : d5700_ufunc_pg_d_imx224_v768_d3_40_m4_raw_k_v1_02 ( /home/prod/CUSTOMER/SONY/AG69_CXD5700_CP1/D5700_MP_8DUT_2PC_241217/D5700_dev/USER_SHMOO/SETUP/ )
+  RESULT : Shmoo_AC_site05 ( /home/prod/CUSTOMER/SONY/AG69_CXD5700_CP1/D5700_MP_8DUT_2PC_241217/D5700_dev/USER_SHMOO/RESULT/ )
+
+.......... Shmoo Parameter ..................................
+  X-Axis:   Period    [   5.000 .. 150.000 ns  ] step   5.000 ns  (  60.000 ns  )
+  Y-Axis:   VDD       [   1.300 ..   0.600 V   ] step  -0.020 V   (   0.971 V   )
+
+  **** Shmoo Plot : d5700_ufunc_pg_d_imx224_v768_d3_40_m4_raw_k_v1_02 *****
+
+--- site 5 / 8 ( execution mode : parallel ) ---
+
+            ----- X-Axis: Period -----
+   Y-Axis  5.000    55.000    105.000     [ns]
+VDD
+            +---------+*--------+--------+
+    1.300   !.PPPPPPPPPPPPPPPPPPPPPPPPPPPP (15.000..      )
+            !.PPPPPPPPPPPPPPPPPPPPPPPPPPPP (15.000..      )
+            !.PPPPPPPPPPPPPPPPPPPPPPPPPPPP (15.000..      )
+            !.PPPPPPPPPPPPPPPPPPPPPPPPPPPP (15.000..      )
+            !.PPPPPPPPPPPPPPPPPPPPPPPPPPPP (15.000..      )
+    1.200   !.PPPPPPPPPPPPPPPPPPPPPPPPPPPP (15.000..      )
+            !.PPPPPPPPPPPPPPPPPPPPPPPPPPPP (15.000..      )
+            !.PPPPPPPPPPPPPPPPPPPPPPPPPPPP (15.000..      )
+            !.PPPPPPPPPPPPPPPPPPPPPPPPPPPP (15.000..      )
+            !.PPPPPPPPPPPPPPPPPPPPPPPPPPPP (15.000..      )
+    1.100   !.PPPPPPPPPPPPPPPPPPPPPPPPPPPP (15.000..      )
+            !.PPPPPPPPPPPPPPPPPPPPPPPPPPPP (15.000..      )
+            !.PPPPPPPPPPPPPPPPPPPPPPPPPPPP (15.000..      )
+            !.PPPPPPPPPPPPPPPPPPPPPPPPPPPP (15.000..      )
+            !.PPPPPPPPPPPPPPPPPPPPPPPPPPPP (15.000..      )
+    1.000   !.PPPPPPPPPPPPPPPPPPPPPPPPPPPP (15.000..      )
+           *!.PPPPPPPPPPPPPPPPPPPPPPPPPPPP (15.000..      )
+            !.PPPPPPPPPPPPPPPPPPPPPPPPPPPP (15.000..      )
+            !.PPPPPPPPPPPPPPPPPPPPPPPPPPPP (15.000..      )
+            !..PPPPPPPPPPPPPPPPPPPPPPPPPPP (20.000..      )
+    0.900   !..PPPPPPPPPPPPPPPPPPPPPPPPPPP (20.000..      )
+            !..PPPPPPPPPPPPPPPPPPPPPPPPPPP (20.000..      )
+            !..PPPPPPPPPPPPPPPPPPPPPPPPPPP (20.000..      )
+            !...PPPPPPPPPPPPPPPPPPPPPPPPPP (25.000..      )
+            !...PPPPPPPPPPPPPPPPPPPPPPPPPP (25.000..      )
+    0.800   !....PPPPPPPPPPPPPPPPPPPPPPPPP (30.000..      )
+            !....PPPPPPPPPPPPPPPPPPPPPPPPP (30.000..      )
+            !.....PPPPPPPPPPPPPPPPPPPPPPPP (35.000..      )
+            !......PPPPPPPPPPPPPPPPPPPPPPP (40.000..      )
+            !.......PPPPPPPPPPPPPPPPPPPPPP (45.000..      )
+    0.700   !.........!.........!........!  (      ..      )
+            !.........!.........!........!  (      ..      )
+            !.........!.........!........!  (      ..      )
+            !.........!.........!........!  (      ..      )
+            !.........!.........!........!  (      ..      )
+    0.600   !.........!.........!........!  (      ..      )
+        V   +---------+*--------+--------+
+           5.000    55.000    105.000     [ns]
+
+
+---------- TestMethod Shmoo --------------------------------
+  TITLE  : d5700_ufunc_pg_d_imx224_v768_d3_40_m4_raw_k_v1_02      DATE : Thu Dec 19 16:05:44 2024
+
+  SETUP  : d5700_ufunc_pg_d_imx224_v768_d3_40_m4_raw_k_v1_02 ( /home/prod/CUSTOMER/SONY/AG69_CXD5700_CP1/D5700_MP_8DUT_2PC_241217/D5700_dev/USER_SHMOO/SETUP/ )
+  RESULT : Shmoo_AC_site06 ( /home/prod/CUSTOMER/SONY/AG69_CXD5700_CP1/D5700_MP_8DUT_2PC_241217/D5700_dev/USER_SHMOO/RESULT/ )
+
+.......... Shmoo Parameter ..................................
+  X-Axis:   Period    [   5.000 .. 150.000 ns  ] step   5.000 ns  (  60.000 ns  )
+  Y-Axis:   VDD       [   1.300 ..   0.600 V   ] step  -0.020 V   (   0.971 V   )
+
+  **** Shmoo Plot : d5700_ufunc_pg_d_imx224_v768_d3_40_m4_raw_k_v1_02 *****
+
+--- site 6 / 8 ( execution mode : parallel ) ---
+
+            ----- X-Axis: Period -----
+   Y-Axis  5.000    55.000    105.000     [ns]
+VDD
+            +---------+*--------+--------+
+    1.300   !...PPPPPPPPPPPPPPPPPPPPPPPPPP (25.000..      )
+            !...PPPPPPPPPPPPPPPPPPPPPPPPPP (25.000..      )
+            !...PPPPPPPPPPPPPPPPPPPPPPPPPP (25.000..      )
+            !...PPPPPPPPPPPPPPPPPPPPPPPPPP (25.000..      )
+            !...PPPPPPPPPPPPPPPPPPPPPPPPPP (25.000..      )
+    1.200   !...PPPPPPPPPPPPPPPPPPPPPPPPPP (25.000..      )
+            !...PPPPPPPPPPPPPPPPPPPPPPPPPP (25.000..      )
+            !...PPPPPPPPPPPPPPPPPPPPPPPPPP (25.000..      )
+            !...PPPPPPPPPPPPPPPPPPPPPPPPPP (25.000..      )
+            !...PPPPPPPPPPPPPPPPPPPPPPPPPP (25.000..      )
+    1.100   !...PPPPPPPPPPPPPPPPPPPPPPPPPP (25.000..      )
+            !...PPPPPPPPPPPPPPPPPPPPPPPPPP (25.000..      )
+            !...PPPPPPPPPPPPPPPPPPPPPPPPPP (25.000..      )
+            !...PPPPPPPPPPPPPPPPPPPPPPPPPP (25.000..      )
+            !...PPPPPPPPPPPPPPPPPPPPPPPPPP (25.000..      )
+    1.000   !...PPPPPPPPPPPPPPPPPPPPPPPPPP (25.000..      )
+           *!...PPPPPPPPPPPPPPPPPPPPPPPPPP (25.000..      )
+            !...PPPPPPPPPPPPPPPPPPPPPPPPPP (25.000..      )
+            !...PPPPPPPPPPPPPPPPPPPPPPPPPP (25.000..      )
+            !...PPPPPPPPPPPPPPPPPPPPPPPPPP (25.000..      )
+    0.900   !...PPPPPPPPPPPPPPPPPPPPPPPPPP (25.000..      )
+            !...PPPPPPPPPPPPPPPPPPPPPPPPPP (25.000..      )
+            !...PPPPPPPPPPPPPPPPPPPPPPPPPP (25.000..      )
+            !...PPPPPPPPPPPPPPPPPPPPPPPPPP (25.000..      )
+            !...PPPPPPPPPPPPPPPPPPPPPPPPPP (25.000..      )
+    0.800   !....PPPPPPPPPPPPPPPPPPPPPPPPP (30.000..      )
+            !......PPPPPPPPPPPPPPPPPPPPPPP (40.000..      )
+            !.......PPPPPPPPPPPPPPPPPPPPPP (45.000..      )
+            !.......P.!.PPPPPPPPPPPPPPPPPP (45.000..65.000)
+            !........P!.........!........! (50.000..55.000)
+    0.700   !.........!.........!........!  (      ..      )
+            !.........!.........!........!  (      ..      )
+            !.........!.........!........!  (      ..      )
+            !.........!.........!........!  (      ..      )
+            !.........!.........!........!  (      ..      )
+    0.600   !.........!.........!........!  (      ..      )
+        V   +---------+*--------+--------+
+           5.000    55.000    105.000     [ns]
+
+
+---------- TestMethod Shmoo --------------------------------
+  TITLE  : d5700_ufunc_pg_d_imx224_v768_d3_40_m4_raw_k_v1_02      DATE : Thu Dec 19 16:05:44 2024
+
+  SETUP  : d5700_ufunc_pg_d_imx224_v768_d3_40_m4_raw_k_v1_02 ( /home/prod/CUSTOMER/SONY/AG69_CXD5700_CP1/D5700_MP_8DUT_2PC_241217/D5700_dev/USER_SHMOO/SETUP/ )
+  RESULT : Shmoo_AC_site07 ( /home/prod/CUSTOMER/SONY/AG69_CXD5700_CP1/D5700_MP_8DUT_2PC_241217/D5700_dev/USER_SHMOO/RESULT/ )
+
+.......... Shmoo Parameter ..................................
+  X-Axis:   Period    [   5.000 .. 150.000 ns  ] step   5.000 ns  (  60.000 ns  )
+  Y-Axis:   VDD       [   1.300 ..   0.600 V   ] step  -0.020 V   (   0.971 V   )
+
+  **** Shmoo Plot : d5700_ufunc_pg_d_imx224_v768_d3_40_m4_raw_k_v1_02 *****
+
+--- site 7 / 8 ( execution mode : parallel ) ---
+
+            ----- X-Axis: Period -----
+   Y-Axis  5.000    55.000    105.000     [ns]
+VDD
+            +---------+*--------+--------+
+    1.300   !...PPPPPPPPPPPPPPPPPPPPPPPPPP (25.000..      )
+            !...PPPPPPPPPPPPPPPPPPPPPPPPPP (25.000..      )
+            !...PPPPPPPPPPPPPPPPPPPPPPPPPP (25.000..      )
+            !...PPPPPPPPPPPPPPPPPPPPPPPPPP (25.000..      )
+            !...PPPPPPPPPPPPPPPPPPPPPPPPPP (25.000..      )
+    1.200   !...PPPPPPPPPPPPPPPPPPPPPPPPPP (25.000..      )
+            !...PPPPPPPPPPPPPPPPPPPPPPPPPP (25.000..      )
+            !...PPPPPPPPPPPPPPPPPPPPPPPPPP (25.000..      )
+            !...PPPPPPPPPPPPPPPPPPPPPPPPPP (25.000..      )
+            !...PPPPPPPPPPPPPPPPPPPPPPPPPP (25.000..      )
+    1.100   !...PPPPPPPPPPPPPPPPPPPPPPPPPP (25.000..      )
+            !...PPPPPPPPPPPPPPPPPPPPPPPPPP (25.000..      )
+            !...PPPPPPPPPPPPPPPPPPPPPPPPPP (25.000..      )
+            !...PPPPPPPPPPPPPPPPPPPPPPPPPP (25.000..      )
+            !...PPPPPPPPPPPPPPPPPPPPPPPPPP (25.000..      )
+    1.000   !...PPPPPPPPPPPPPPPPPPPPPPPPPP (25.000..      )
+           *!...PPPPPPPPPPPPPPPPPPPPPPPPPP (25.000..      )
+            !...PPPPPPPPPPPPPPPPPPPPPPPPPP (25.000..      )
+            !...PPPPPPPPPPPPPPPPPPPPPPPPPP (25.000..      )
+            !...PPPPPPPPPPPPPPPPPPPPPPPPPP (25.000..      )
+    0.900   !...PPPPPPPPPPPPPPPPPPPPPPPPPP (25.000..      )
+            !...PPPPPPPPPPPPPPPPPPPPPPPPPP (25.000..      )
+            !...PPPPPPPPPPPPPPPPPPPPPPPPPP (25.000..      )
+            !...PPPPPPPPPPPPPPPPPPPPPPPPPP (25.000..      )
+            !...PPPPPPPPPPPPPPPPPPPPPPPPPP (25.000..      )
+    0.800   !....PPPPPPPPPPPPPPPPPPPPPPPPP (30.000..      )
+            !.....PPPPPPPPPPPPPPPPPPPPPPPP (35.000..      )
+            !.....PPPPPPPPPPPPPPPPPPPPPPPP (35.000..      )
+            !......PPPPPPPPPPPPPPPPPPPPPPP (40.000..      )
+            !.........!PPPPPPPPPPPPPPPPPPP (60.000..      )
+    0.700   !.........!.........!........!  (      ..      )
+            !.........!.........!........!  (      ..      )
+            !.........!.........!........!  (      ..      )
+            !.........!.........!........!  (      ..      )
+            !.........!.........!........!  (      ..      )
+    0.600   !.........!.........!........!  (      ..      )
+        V   +---------+*--------+--------+
+           5.000    55.000    105.000     [ns]
+
+
+---------- TestMethod Shmoo --------------------------------
+  TITLE  : d5700_ufunc_pg_d_imx224_v768_d3_40_m4_raw_k_v1_02      DATE : Thu Dec 19 16:05:44 2024
+
+  SETUP  : d5700_ufunc_pg_d_imx224_v768_d3_40_m4_raw_k_v1_02 ( /home/prod/CUSTOMER/SONY/AG69_CXD5700_CP1/D5700_MP_8DUT_2PC_241217/D5700_dev/USER_SHMOO/SETUP/ )
+  RESULT : Shmoo_AC_site08 ( /home/prod/CUSTOMER/SONY/AG69_CXD5700_CP1/D5700_MP_8DUT_2PC_241217/D5700_dev/USER_SHMOO/RESULT/ )
+
+.......... Shmoo Parameter ..................................
+  X-Axis:   Period    [   5.000 .. 150.000 ns  ] step   5.000 ns  (  60.000 ns  )
+  Y-Axis:   VDD       [   1.300 ..   0.600 V   ] step  -0.020 V   (   0.971 V   )
+
+  **** Shmoo Plot : d5700_ufunc_pg_d_imx224_v768_d3_40_m4_raw_k_v1_02 *****
+
+--- site 8 / 8 ( execution mode : parallel ) ---
+
+            ----- X-Axis: Period -----
+   Y-Axis  5.000    55.000    105.000     [ns]
+VDD
+            +---------+*--------+--------+
+    1.300   PPPPPPPPPPPPPPPPPPPPPPPPPPPPPP  (      ..      )
+            PPPPPPPPPPPPPPPPPPPPPPPPPPPPPP  (      ..      )
+            PPPPPPPPPPPPPPPPPPPPPPPPPPPPPP  (      ..      )
+            PPPPPPPPPPPPPPPPPPPPPPPPPPPPPP  (      ..      )
+            PPPPPPPPPPPPPPPPPPPPPPPPPPPPPP  (      ..      )
+    1.200   PPPPPPPPPPPPPPPPPPPPPPPPPPPPPP  (      ..      )
+            PPPPPPPPPPPPPPPPPPPPPPPPPPPPPP  (      ..      )
+            PPPPPPPPPPPPPPPPPPPPPPPPPPPPPP  (      ..      )
+            PPPPPPPPPPPPPPPPPPPPPPPPPPPPPP  (      ..      )
+            PPPPPPPPPPPPPPPPPPPPPPPPPPPPPP  (      ..      )
+    1.100   PPPPPPPPPPPPPPPPPPPPPPPPPPPPPP  (      ..      )
+            PPPPPPPPPPPPPPPPPPPPPPPPPPPPPP  (      ..      )
+            !PPPPPPPPPPPPPPPPPPPPPPPPPPPPP (10.000..      )
+            !.PPPPPPPPPPPPPPPPPPPPPPPPPPPP (15.000..      )
+            !.PPPPPPPPPPPPPPPPPPPPPPPPPPPP (15.000..      )
+    1.000   !.PPPPPPPPPPPPPPPPPPPPPPPPPPPP (15.000..      )
+           *!.PPPPPPPPPPPPPPPPPPPPPPPPPPPP (15.000..      )
+            !.PPPPPPPPPPPPPPPPPPPPPPPPPPPP (15.000..      )
+            !.PPPPPPPPPPPPPPPPPPPPPPPPPPPP (15.000..      )
+            !.PPPPPPPPPPPPPPPPPPPPPPPPPPPP (15.000..      )
+    0.900   !..PPPPPPPPPPPPPPPPPPPPPPPPPPP (20.000..      )
+            !..PPPPPPPPPPPPPPPPPPPPPPPPPPP (20.000..      )
+            !..PPPPPPPPPPPPPPPPPPPPPPPPPPP (20.000..      )
+            !...PPPPPPPPPPPPPPPPPPPPPPPPPP (25.000..      )
+            !...PPPPPPPPPPPPPPPPPPPPPPPPPP (25.000..      )
+    0.800   !....PPPPPPPPPPPPPPPPPPPPPPPPP (30.000..      )
+            !....PPPPPPPPPPPPPPPPPPPPPPPPP (30.000..      )
+            !.......PPPPPPPPPPPPPPPPPPPPPP (45.000..      )
+            !.........!.........!........!  (      ..      )
+            !.......P.!.........!........! (45.000..50.000)
+    0.700   !.........!.........!........!  (      ..      )
+            !.........!.........!........!  (      ..      )
+            !.........!.P.......!........! (65.000..70.000)
+            !.........!.........!........!  (      ..      )
+            !.........!.........!........!  (      ..      )
+    0.600   !.........!.........!........!  (      ..      )
+        V   +---------+*--------+--------+
+           5.000    55.000    105.000     [ns]
+
+Site 1: Device test PASSED!
+******************************************
+******  @@@@     @    @@@@@  @@@@@  ******
+******  @   @   @ @   @      @      ******
+******  @@@@   @@@@@  @@@@@  @@@@@  ******
+******  @      @   @      @      @  ******
+******  @      @   @  @@@@@  @@@@@  ******
+******************************************
+Site 1: BIN :  1 (PASS)
+Site 2: Device test PASSED!
+******************************************
+******  @@@@     @    @@@@@  @@@@@  ******
+******  @   @   @ @   @      @      ******
+******  @@@@   @@@@@  @@@@@  @@@@@  ******
+******  @      @   @      @      @  ******
+******  @      @   @  @@@@@  @@@@@  ******
+******************************************
+Site 2: BIN :  1 (PASS)
+Site 3: Device test PASSED!
+******************************************
+******  @@@@     @    @@@@@  @@@@@  ******
+******  @   @   @ @   @      @      ******
+******  @@@@   @@@@@  @@@@@  @@@@@  ******
+******  @      @   @      @      @  ******
+******  @      @   @  @@@@@  @@@@@  ******
+******************************************
+Site 3: BIN :  1 (PASS)
+Site 4: Device test PASSED!
+******************************************
+******  @@@@     @    @@@@@  @@@@@  ******
+******  @   @   @ @   @      @      ******
+******  @@@@   @@@@@  @@@@@  @@@@@  ******
+******  @      @   @      @      @  ******
+******  @      @   @  @@@@@  @@@@@  ******
+******************************************
+Site 4: BIN :  1 (PASS)
+Site 5: Device test PASSED!
+******************************************
+******  @@@@     @    @@@@@  @@@@@  ******
+******  @   @   @ @   @      @      ******
+******  @@@@   @@@@@  @@@@@  @@@@@  ******
+******  @      @   @      @      @  ******
+******  @      @   @  @@@@@  @@@@@  ******
+******************************************
+Site 5: BIN :  1 (PASS)
+Site 6: Device test PASSED!
+******************************************
+******  @@@@     @    @@@@@  @@@@@  ******
+******  @   @   @ @   @      @      ******
+******  @@@@   @@@@@  @@@@@  @@@@@  ******
+******  @      @   @      @      @  ******
+******  @      @   @  @@@@@  @@@@@  ******
+******************************************
+Site 6: BIN :  1 (PASS)
+Site 7: Device test PASSED!
+******************************************
+******  @@@@     @    @@@@@  @@@@@  ******
+******  @   @   @ @   @      @      ******
+******  @@@@   @@@@@  @@@@@  @@@@@  ******
+******  @      @   @      @      @  ******
+******  @      @   @  @@@@@  @@@@@  ******
+******************************************
+Site 7: BIN :  1 (PASS)
+Site 8: Device test PASSED!
+******************************************
+******  @@@@     @    @@@@@  @@@@@  ******
+******  @   @   @ @   @      @      ******
+******  @@@@   @@@@@  @@@@@  @@@@@  ******
+******  @      @   @      @      @  ******
+******  @      @   @  @@@@@  @@@@@  ******
+******************************************
+Site 8: BIN :  1 (PASS)
+INFO: (dataformatter) Completed Detailed STDF file per Lot:  /home/prod/stdf/manual/main_Lot_1_Dec_19_16h05m43s_STDF
+  Ended at: 20241219 161042
+******** end testflow report data  *******
