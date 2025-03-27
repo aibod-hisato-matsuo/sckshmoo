@@ -3,7 +3,7 @@ import re
 import sys
 import argparse
 from collections import defaultdict
-from shmooapp.analysis.common_utils import VDD_PATTERNS
+from analysis.common_utils import VDD_PATTERNS
 
 def parse_log_file(file_path):
     """
