@@ -13,7 +13,6 @@ PLOTSDIR = "out.plot"
 ARCHIVEDIR = "out.archive"
 
 #custom_font = tkfont.Font(family="Courier", size=8, weight="bold", slant="italic")
-custom_font = tkfont.Font(family="Courier", size=8)
 
 def select_file():
     # Open file dialog with filter for text files
@@ -90,6 +89,8 @@ def display_plots(texts):
     Params:
         texts (list of str): List of text contents to display.
     """
+    custom_font = tkfont.Font(family="Courier", size=8)
+    
     # Clear the output_frame before inserting new texts
     for widget in output_frame.winfo_children():
         widget.destroy()
@@ -103,7 +104,7 @@ def display_plots(texts):
         label = tk.Label(frame, text="Content", anchor='w')
         label.pack(fill=tk.X)
 
-        st = scrolledtext.ScrolledText(frame, width=60, height=40)
+        st = scrolledtext.ScrolledText(frame, width=60, height=40, font=custom_font)
         st.pack(fill=tk.BOTH, expand=True)
         st.insert(tk.END, text)
         st.configure(state='disabled')  # Make it read-only if desired
