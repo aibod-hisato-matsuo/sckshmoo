@@ -89,22 +89,22 @@ def display_plots(texts):
     Params:
         texts (list of str): List of text contents to display.
     """
-    custom_font = tkfont.Font(family="Courier", size=8)
-    
+    custom_font = tkfont.Font(family="Courier", size=6)
+
     # Clear the output_frame before inserting new texts
     for widget in output_frame.winfo_children():
         widget.destroy()
 
     # Create a ScrolledText widget for each text and pack it horizontally
-    for text in texts:
+    for index, text in enumerate(texts):
         frame = tk.Frame(output_frame)
         frame.pack(side=tk.LEFT, padx=5, pady=5, fill=tk.BOTH, expand=True)
 
         # Optional: Add a label to identify each text block
-        label = tk.Label(frame, text="Content", anchor='w')
+        label = tk.Label(frame, text=f"Content {index + 1}", anchor='w', font=("Helvetica", 12, "bold"))
         label.pack(fill=tk.X)
 
-        st = scrolledtext.ScrolledText(frame, width=60, height=40, font=custom_font)
+        st = scrolledtext.ScrolledText(frame, width=60, height=60, font=custom_font)
         st.pack(fill=tk.BOTH, expand=True)
         st.insert(tk.END, text)
         st.configure(state='disabled')  # Make it read-only if desired
@@ -164,7 +164,7 @@ def display_subdirs(subdirs):
         btn = tk.Button(
             subdirs_frame, 
             text=subdir, 
-            width=50, 
+            width=80, 
             command=lambda s=subdir: on_subdir_button_click(s)
         )
         btn.pack(pady=2)
@@ -182,20 +182,41 @@ input_file_label = tk.Label(root, text="No file selected")
 input_file_label.pack(pady=5)
 
 # ScrolledText widget to display file content
-output_text = scrolledtext.ScrolledText(root, width=60, height=20)
+output_text = scrolledtext.ScrolledText(root, width=60, height=10)
 output_text.pack(pady=10)
 
-# Create output_frame to hold multiple ScrolledText widgets
-output_frame = tk.Frame(root)
-output_frame.pack(pady=10, fill=tk.BOTH, expand=True)
+## Create output_frame to hold multiple ScrolledText widgets
+#output_frame = tk.Frame(root)
+#output_frame.pack(pady=10, fill=tk.BOTH, expand=True)
+
+# Create a container frame for output with horizontal scrollbar
+output_container = tk.Frame(root)
+output_container.pack(pady=10, fill=tk.BOTH, expand=True)
+
+# Create a Canvas inside the container
+output_canvas = tk.Canvas(output_container, borderwidth=0)
+output_canvas.pack(side=tk.TOP, fill=tk.BOTH, expand=True)
+
+# Create a horizontal scrollbar linked to the Canvas
+output_scrollbar_x = tk.Scrollbar(output_container, orient=tk.HORIZONTAL, command=output_canvas.xview)
+output_scrollbar_x.pack(side=tk.BOTTOM, fill=tk.X)
+
+output_canvas.configure(xscrollcommand=output_scrollbar_x.set)
+
+# Create the output_frame_inner inside the Canvas
+output_frame_inner = tk.Frame(output_canvas)
+output_canvas.create_window((0, 0), window=output_frame_inner, anchor='nw')
+
+# Update scrollregion when the output_frame_inner changes size
+def on_output_frame_configure(event):
+    output_canvas.configure(scrollregion=output_canvas.bbox("all"))
+
+output_frame_inner.bind("<Configure>", on_output_frame_configure)
 
 # Label for Subdirectories Listbox
 subdirs_label = tk.Label(root, text="Subdirectories:")
 subdirs_label.pack(pady=5)
 
-## Listbox to display subdirectories
-#subdirs_listbox = Listbox(root, width=60, height=10)
-#subdirs_listbox.pack(pady=5)
 
 # Frame to hold the subdirectory buttons
 subdirs_frame = tk.Frame(root)
