@@ -1,11 +1,12 @@
 import tkinter as tk
 from tkinter import filedialog, scrolledtext
+from analysis.create_shmooplot_files import extract_test_results
 
 def select_file():
     # Open file dialog with filter for text files
     file_path = filedialog.askopenfilename(
-        title="Select Text File",
-        filetypes=[("Text Files", "*.txt"), ("All Files", "*.*")]
+        title="Select SHMOO Log File",
+        filetypes=[("Log Files", "*.log"), ("All Files", "*.*")]
     )
     if file_path:
         input_file_label.config(text=file_path)
