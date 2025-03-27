@@ -1,6 +1,7 @@
 import os
 import tkinter as tk
-from tkinter import filedialog, scrolledtext, Listbox
+from tkinter import filedialog, scrolledtext
+import tkinter.font as tkfont
 from analysis.create_shmooplot_files import extract_test_results
 from analysis.fill_missing_vdd import update_files_for_vdd
 from analysis.update_shmoo_range import update_files_for_range
@@ -11,6 +12,8 @@ from analysis.xor_shmoo import process_xor
 PLOTSDIR = "out.plot"
 ARCHIVEDIR = "out.archive"
 
+#custom_font = tkfont.Font(family="Courier", size=8, weight="bold", slant="italic")
+custom_font = tkfont.Font(family="Courier", size=8)
 
 def select_file():
     # Open file dialog with filter for text files
@@ -76,11 +79,11 @@ def read_plots_xor(xordir):
         xorfile_texts.append(text)
     return xorfile_texts
 
-#def display_output(text):
-#    output_text.delete("1.0", tk.END)
-#    output_text.insert(tk.END, text)
+def display_output(text):
+    output_text.delete("1.0", tk.END)
+    output_text.insert(tk.END, text)
 
-def display_output(texts):
+def display_plots(texts):
     """
     Display multiple texts in the output_frame arranged horizontally.
     
@@ -100,7 +103,7 @@ def display_output(texts):
         label = tk.Label(frame, text="Content", anchor='w')
         label.pack(fill=tk.X)
 
-        st = scrolledtext.ScrolledText(frame, width=60, height=20)
+        st = scrolledtext.ScrolledText(frame, width=60, height=40)
         st.pack(fill=tk.BOTH, expand=True)
         st.insert(tk.END, text)
         st.configure(state='disabled')  # Make it read-only if desired
@@ -142,7 +145,7 @@ def on_subdir_button_click(subdir):
         #all_texts.append("XOR MajorityVote Texts:")
         #all_texts.extend(xor_mj_texts)
         
-        display_output(all_texts)
+        display_plots(all_texts)
     except Exception as e:
         display_output([f"Error processing subdirectory {subdir}: {e}"])
 
@@ -178,8 +181,8 @@ input_file_label = tk.Label(root, text="No file selected")
 input_file_label.pack(pady=5)
 
 # ScrolledText widget to display file content
-#output_text = scrolledtext.ScrolledText(root, width=60, height=20)
-#output_text.pack(pady=10)
+output_text = scrolledtext.ScrolledText(root, width=60, height=20)
+output_text.pack(pady=10)
 
 # Create output_frame to hold multiple ScrolledText widgets
 output_frame = tk.Frame(root)
