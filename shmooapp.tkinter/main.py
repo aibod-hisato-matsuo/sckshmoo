@@ -32,7 +32,7 @@ def run_all_tests(filepath):
     subdirs = extract_test_results(filepath,PLOTSDIR)
     for test in subdirs:
         update_files_for_vdd(test)
-        update_files_for_range(test)
+        #update_files_for_range(test)
         margin_sets = calculate_files_for_margin(test)
         read_plots(test)
         aggregation_file_or = process_aggregation(test,"OR")
