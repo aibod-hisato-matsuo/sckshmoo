@@ -12,8 +12,6 @@ from shmooapp.analysis.xor_shmoo import process_xor
 PLOTSDIR = "out.plot"
 ARCHIVEDIR = "out.archive"
 
-#custom_font = tkfont.Font(family="Courier", size=8, weight="bold", slant="italic")
-
 def select_file():
     # Open file dialog with filter for text files
     file_path = filedialog.askopenfilename(
@@ -133,24 +131,14 @@ def on_subdir_button_click(subdir):
         #xor_mj_texts = read_plots_xor(xordir_mj)
         
         agg_items = ["OR", "AND", "Majority"]
-        #agg_texts_with_labels = []
-        #for i, text in enumerate(agg_texts):
-        #    agg_texts_with_labels.append((agg_items[i], text))
         agg_texts_with_labels = [(agg_items[i], text) for i, text in enumerate(agg_texts)]
 
-        #xor_and_texts_with_labels = []
-        #for i, text in enumerate(xor_and_texts):
-        #    xor_and_texts_with_labels.append((f"XOR with AND {i+1}", text))
         xor_and_texts_with_labels = [
             (f"AND compared: XOR {i+1}", text) for i, text in enumerate(xor_and_texts)
         ]
 
         # Combine all texts to display
         all_texts = []
-        #all_texts.append(f"Subdirectory: {subdir}")
-        #all_texts.append("Plot Texts:")
-        #all_texts.extend(plot_texts)
-        #all_texts.append("Aggregation Texts (OR, AND, Majority):")
         all_texts.extend(agg_texts_with_labels)
         #all_texts.append("XOR OR Texts:")
         #all_texts.extend(xor_or_texts)
@@ -163,6 +151,36 @@ def on_subdir_button_click(subdir):
         display_plots(xor_and_texts_with_labels,output_frame_inner2)
     except Exception as e:
         display_output([f"Error processing subdirectory {subdir}: {e}"])
+
+        # Clear any existing buttons in subdir_buttons_frame
+        for widget in subdir_buttons_frame.winfo_children():
+            widget.destroy()
+       
+        # Define button callbacks
+        def handle_or():
+            # Implement the functionality for the OR button
+            display_output(f"OR button clicked for {subdir}")
+            # Add your specific logic here
+
+        def handle_and():
+            # Implement the functionality for the AND button
+            display_output(f"AND button clicked for {subdir}")
+            # Add your specific logic here
+
+        def handle_majority():
+            # Implement the functionality for the Majority button
+            display_output(f"Majority button clicked for {subdir}")
+            # Add your specific logic here
+
+        # Create the three buttons
+        or_button = tk.Button(subdir_buttons_frame, text="OR", command=handle_or)
+        and_button = tk.Button(subdir_buttons_frame, text="AND", command=handle_and)
+        majority_button = tk.Button(subdir_buttons_frame, text="Majority", command=handle_majority)
+       
+        # Pack the buttons into the frame
+        or_button.pack(side=tk.LEFT, padx=5)
+        and_button.pack(side=tk.LEFT, padx=5)
+        majority_button.pack(side=tk.LEFT, padx=5)
 
 
 def display_subdirs(subdirs):
@@ -209,6 +227,10 @@ subdirs_label.pack(pady=5)
 subdirs_frame = tk.Frame(root, height="100")
 subdirs_frame.pack(pady=5, fill=tk.BOTH, expand=False)
 
+# Frame to hold extra buttons after a subdir is selected
+subdir_buttons_frame = tk.Frame(root)
+subdir_buttons_frame.pack(pady=5)
+
 # Create a container frame for output with horizontal scrollbar
 output_container = tk.Frame(root,bg="navy")
 output_container.pack(pady=10, fill=tk.BOTH, expand=True)
@@ -232,14 +254,6 @@ output_canvas.configure(yscrollcommand=output_scrollbar_y.set, xscrollcommand=ou
 # Create a parent frame inside the Canvas to hold both plot frames
 parent_frame = tk.Frame(output_canvas)
 output_canvas.create_window((0, 0), window=parent_frame, anchor='nw')
-
-# Create and pack the first inner frame for the first set of plots
-#output_frame_inner1 = tk.Frame(parent_frame)
-#output_frame_inner1.pack(side=tk.LEFT, padx=5, pady=5, fill=tk.BOTH, expand=True)
-
-# Create and pack the second inner frame for the second set of plots
-#output_frame_inner2 = tk.Frame(parent_frame)
-#output_frame_inner2.pack(side=tk.LEFT, padx=5, pady=5, fill=tk.BOTH, expand=True)
 
 # Create and pack the first inner frame for the first set of plots
 output_frame_inner1 = tk.Frame(parent_frame)
