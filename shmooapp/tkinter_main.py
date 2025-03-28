@@ -89,7 +89,7 @@ def display_plots(texts):
     Params:
         texts (list of str): List of text contents to display.
     """
-    custom_font = tkfont.Font(family="Courier", size=6)
+    custom_font = tkfont.Font(family="Courier", size=6, foreground='#ff0000')
 
     # Clear the output_frame before inserting new texts
     for widget in output_frame_inner.winfo_children():
@@ -171,10 +171,11 @@ def display_subdirs(subdirs):
 
 # Set up the main window
 root = tk.Tk()
-root.title("Log File Viewer")
+root.title("SHMOO Plots Viewer")
+root.geometry("1000x1000")
 
 # Create a button to open the file dialog
-select_button = tk.Button(root, text="Select Text File", command=select_file)
+select_button = tk.Button(root, text="Select SHMOO Log File", command=select_file)
 select_button.pack(pady=10)
 
 # Label to show the selected file path
@@ -182,15 +183,19 @@ input_file_label = tk.Label(root, text="No file selected")
 input_file_label.pack(pady=5)
 
 # ScrolledText widget to display file content
-output_text = scrolledtext.ScrolledText(root, width=60, height=10)
+output_text = scrolledtext.ScrolledText(root, width=100, height=6)
 output_text.pack(pady=10)
 
-## Create output_frame to hold multiple ScrolledText widgets
-#output_frame = tk.Frame(root)
-#output_frame.pack(pady=10, fill=tk.BOTH, expand=True)
+# Label for Subdirectories
+subdirs_label = tk.Label(root, text="Tests:")
+subdirs_label.pack(pady=5)
+
+# Frame to hold the subdirectory buttons
+subdirs_frame = tk.Frame(root)
+subdirs_frame.pack(pady=5, fill=tk.BOTH, expand=True)
 
 # Create a container frame for output with horizontal scrollbar
-output_container = tk.Frame(root)
+output_container = tk.Frame(root,height="800",bg="red")
 output_container.pack(pady=10, fill=tk.BOTH, expand=True)
 
 # Create a Canvas inside the container
@@ -213,13 +218,5 @@ def on_output_frame_configure(event):
 
 output_frame_inner.bind("<Configure>", on_output_frame_configure)
 
-# Label for Subdirectories Listbox
-subdirs_label = tk.Label(root, text="Subdirectories:")
-subdirs_label.pack(pady=5)
-
-
-# Frame to hold the subdirectory buttons
-subdirs_frame = tk.Frame(root)
-subdirs_frame.pack(pady=5, fill=tk.BOTH, expand=True)
 
 root.mainloop()
