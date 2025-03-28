@@ -71,7 +71,6 @@ def extract_data_block(lines):
         data_end = len(lines)
         footer_lines = []
 
-    print(f"--> {footer_lines}")
     data_block = lines[data_start:data_end]
     return header_lines, data_block, footer_lines
 
@@ -390,60 +389,3 @@ def process_aggregation(input_directory,mode) -> str:
     create_aggregated_log(header_lines_common, footer_lines_common, aggregated_data, aggregated_star, mode, output_file)
 
     return output_file
-
-
-
-'''def main():
-    parser = argparse.ArgumentParser(description="Aggregate Shmoo plot data across multiple sites using logical OR or Majority Vote.")
-    parser.add_argument('-i', '--input_dir', type=str, default='extracted_tests',
-                        help='Input directory containing site log files.')
-    parser.add_argument('-o', '--output_file', type=str, default='aggregated_Shmoo_Plot.log',
-                        help='Output file for aggregated data.')
-    parser.add_argument('-m', '--mode', type=str, choices=['OR', 'Majority'], default='OR',
-                        help='Aggregation mode: "OR" or "Majority".')
-    args = parser.parse_args()
-
-    input_directory = args.input_dir
-    output_file = args.output_file
-    mode = args.mode
-
-    if not os.path.exists(input_directory):
-        print(f"Input directory '{input_directory}' does not exist.")
-        sys.exit(1)
-
-    log_files = [f for f in os.listdir(input_directory) if f.endswith('.log')]
-    if not log_files:
-        print(f"No .log files found in '{input_directory}'.")
-        sys.exit(1)
-
-    vdd_data_list = []
-    vdd_has_star_list = []
-    header_lines_common = None
-    footer_lines_common = None
-
-    for log_file in log_files:
-        file_path = os.path.join(input_directory, log_file)
-        try:
-            header_lines, data_block, footer_lines, vdd_data, vdd_has_star = read_log_file(file_path)
-            vdd_data_list.append(vdd_data)
-            vdd_has_star_list.append(vdd_has_star)
-            if header_lines_common is None:
-                header_lines_common = header_lines
-            if footer_lines_common is None:
-                footer_lines_common = footer_lines
-        except ValueError as e:
-            print(f"Error processing '{log_file}': {e}")
-
-    if not vdd_data_list:
-        print("No valid data extracted from log files.")
-        sys.exit(1)
-
-    # Aggregate data based on the selected mode
-    aggregated_data = aggregate(vdd_data_list, mode=mode)
-    aggregated_star = aggregate_star_presence(vdd_has_star_list)
-
-    # Create the aggregated log
-    create_aggregated_log(header_lines_common, footer_lines_common, aggregated_data, aggregated_star, mode, output_file)
-
-if __name__ == '__main__':
-    main()'''

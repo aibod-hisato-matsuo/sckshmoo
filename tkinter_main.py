@@ -82,7 +82,7 @@ def display_output(text):
     output_text.delete("1.0", tk.END)
     output_text.insert(tk.END, text)
 
-def display_plots(texts):
+def display_plots(texts,output_frame_inner):
     """
     Display multiple texts in the output_frame arranged horizontally.
     
@@ -96,15 +96,15 @@ def display_plots(texts):
         widget.destroy()
 
     # Create a ScrolledText widget for each text and pack it horizontally
-    for index, text in enumerate(texts):
+    for (label, text) in texts:
         frame = tk.Frame(output_frame_inner)
         frame.pack(side=tk.LEFT, padx=5, pady=5, fill=tk.BOTH, expand=True)
 
         # Optional: Add a label to identify each text block
-        label = tk.Label(frame, text=f"Content {index + 1}", anchor='w', font=("Helvetica", 12, "bold"), foreground='#ff0000')
+        label = tk.Label(frame, text=f"{label}", anchor='w', font=("Helvetica", 12, "bold"), fg="navy")
         label.pack(fill=tk.X)
 
-        st = scrolledtext.ScrolledText(frame, width=60, height=60, font=custom_font)
+        st = scrolledtext.ScrolledText(frame, width=60, height=70, font=custom_font)
         st.pack(fill=tk.BOTH, expand=True)
         st.insert(tk.END, text)
         st.configure(state='disabled')  # Make it read-only if desired
@@ -125,20 +125,28 @@ def on_subdir_button_click(subdir):
         aggregation_file_and = process_aggregation(subdir, "AND")
         aggregation_file_mj = process_aggregation(subdir, "Majority")
         agg_texts = read_plots_agg(aggregation_file_or, aggregation_file_and, aggregation_file_mj)
-        #xordir_or = process_xor(subdir, aggregation_file_or, "OR_XOR")
-        #xordir_and = process_xor(subdir, aggregation_file_and, "AND_XOR")
-        #xordir_mj = process_xor(subdir, aggregation_file_mj, "MajorityVote_XOR")
+        xordir_or = process_xor(subdir, aggregation_file_or, "OR_XOR")
+        xordir_and = process_xor(subdir, aggregation_file_and, "AND_XOR")
+        xordir_mj = process_xor(subdir, aggregation_file_mj, "MajorityVote_XOR")
         #xor_or_texts = read_plots_xor(xordir_or)
-        #xor_and_texts = read_plots_xor(xordir_and)
+        xor_and_texts = read_plots_xor(xordir_and)
         #xor_mj_texts = read_plots_xor(xordir_mj)
         
+        agg_items = ["OR", "AND", "Majority"]
+        agg_texts_with_labels = []
+        for i, text in enumerate(agg_texts):
+            agg_texts_with_labels.append((agg_items[i], text))
+
+        xor_and_texts_with_labels = []
+        for i, text in enumerate(xor_and_texts):
+            xor_and_texts_with_labels.append((f"XOR with AND {i+1}", text))
         # Combine all texts to display
         all_texts = []
         #all_texts.append(f"Subdirectory: {subdir}")
         #all_texts.append("Plot Texts:")
         #all_texts.extend(plot_texts)
         #all_texts.append("Aggregation Texts (OR, AND, Majority):")
-        all_texts.extend(agg_texts)
+        all_texts.extend(agg_texts_with_labels)
         #all_texts.append("XOR OR Texts:")
         #all_texts.extend(xor_or_texts)
         #all_texts.append("XOR AND Texts:")
@@ -146,7 +154,8 @@ def on_subdir_button_click(subdir):
         #all_texts.append("XOR MajorityVote Texts:")
         #all_texts.extend(xor_mj_texts)
         
-        display_plots(all_texts)
+        display_plots(agg_texts_with_labels,output_frame_inner1)
+        display_plots(xor_and_texts_with_labels,output_frame_inner2)
     except Exception as e:
         display_output([f"Error processing subdirectory {subdir}: {e}"])
 
@@ -192,10 +201,10 @@ subdirs_label.pack(pady=5)
 
 # Frame to hold the subdirectory buttons
 subdirs_frame = tk.Frame(root, height="100")
-subdirs_frame.pack(pady=5, fill=tk.BOTH, expand=True)
+subdirs_frame.pack(pady=5, fill=tk.BOTH, expand=False)
 
 # Create a container frame for output with horizontal scrollbar
-output_container = tk.Frame(root,height="800",bg="red")
+output_container = tk.Frame(root,bg="navy")
 output_container.pack(pady=10, fill=tk.BOTH, expand=True)
 
 # Create a Canvas inside the container
@@ -209,14 +218,16 @@ output_scrollbar_x.pack(side=tk.BOTTOM, fill=tk.X)
 output_canvas.configure(xscrollcommand=output_scrollbar_x.set)
 
 # Create the output_frame_inner inside the Canvas
-output_frame_inner = tk.Frame(output_canvas)
-output_canvas.create_window((0, 0), window=output_frame_inner, anchor='nw')
+output_frame_inner1 = tk.Frame(output_canvas)
+output_frame_inner2 = tk.Frame(output_canvas)
+output_canvas.create_window((0, 0), window=output_frame_inner1, anchor='nw')
+output_canvas.create_window((0, 0), window=output_frame_inner2, anchor='nw')
 
 # Update scrollregion when the output_frame_inner changes size
 def on_output_frame_configure(event):
     output_canvas.configure(scrollregion=output_canvas.bbox("all"))
 
-output_frame_inner.bind("<Configure>", on_output_frame_configure)
-
+output_frame_inner1.bind("<Configure>", on_output_frame_configure)
+output_frame_inner2.bind("<Configure>", on_output_frame_configure)
 
 root.mainloop()
