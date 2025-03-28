@@ -98,7 +98,7 @@ def display_plots(texts,output_frame_inner):
     # Create a ScrolledText widget for each text and pack it horizontally
     for (label, text) in texts:
         frame = tk.Frame(output_frame_inner)
-        frame.pack(side=tk.LEFT, padx=5, pady=5, fill=tk.BOTH, expand=True)
+        frame.pack(side=tk.LEFT, padx=5, pady=5, fill=tk.BOTH, expand=False)
 
         # Optional: Add a label to identify each text block
         label = tk.Label(frame, text=f"{label}", anchor='w', font=("Helvetica", 12, "bold"), fg="navy")
@@ -114,7 +114,7 @@ def on_subdir_button_click(subdir):
     Callback function when a subdirectory button is clicked.
     """
     # Example action: Display the selected subdirectory
-    display_output(f"Selected Subdirectory: {subdir}")
+    display_output(f"Selected Test: {subdir}")
     
     # TODO: Add more functionality as needed
     # For example, open the subdirectory, process files, etc.
@@ -197,7 +197,7 @@ input_file_label = tk.Label(root, text="No file selected")
 input_file_label.pack(pady=5)
 
 # ScrolledText widget to display file content
-output_text = scrolledtext.ScrolledText(root, width=100, height=6)
+output_text = scrolledtext.ScrolledText(root, width=100, height=6, fg="red")
 output_text.pack(pady=10)
 
 # Label for Subdirectories
