@@ -89,7 +89,7 @@ def display_plots(texts):
     Params:
         texts (list of str): List of text contents to display.
     """
-    custom_font = tkfont.Font(family="Courier", size=6, foreground='#ff0000')
+    custom_font = tkfont.Font(family="Courier", size=6)
 
     # Clear the output_frame before inserting new texts
     for widget in output_frame_inner.winfo_children():
@@ -101,7 +101,7 @@ def display_plots(texts):
         frame.pack(side=tk.LEFT, padx=5, pady=5, fill=tk.BOTH, expand=True)
 
         # Optional: Add a label to identify each text block
-        label = tk.Label(frame, text=f"Content {index + 1}", anchor='w', font=("Helvetica", 12, "bold"))
+        label = tk.Label(frame, text=f"Content {index + 1}", anchor='w', font=("Helvetica", 12, "bold"), foreground='#ff0000')
         label.pack(fill=tk.X)
 
         st = scrolledtext.ScrolledText(frame, width=60, height=60, font=custom_font)
