@@ -142,7 +142,7 @@ def on_subdir_button_click(subdir):
         #for i, text in enumerate(xor_and_texts):
         #    xor_and_texts_with_labels.append((f"XOR with AND {i+1}", text))
         xor_and_texts_with_labels = [
-            (f"XOR with AND {i+1}", text) for i, text in enumerate(xor_and_texts)
+            (f"AND compared: XOR {i+1}", text) for i, text in enumerate(xor_and_texts)
         ]
 
         # Combine all texts to display
@@ -178,6 +178,7 @@ def display_subdirs(subdirs):
         btn = tk.Button(
             subdirs_frame, 
             text=subdir, 
+            anchor='w',
             width=80, 
             command=lambda s=subdir: on_subdir_button_click(s)
         )
@@ -197,7 +198,7 @@ input_file_label = tk.Label(root, text="No file selected")
 input_file_label.pack(pady=5)
 
 # ScrolledText widget to display file content
-output_text = scrolledtext.ScrolledText(root, width=100, height=6, fg="red")
+output_text = scrolledtext.ScrolledText(root, width=100, height=6, fg="blue")
 output_text.pack(pady=10)
 
 # Label for Subdirectories
@@ -213,16 +214,18 @@ output_container = tk.Frame(root,bg="navy")
 output_container.pack(pady=10, fill=tk.BOTH, expand=True)
 
 # Create a Canvas inside the container
-output_canvas = tk.Canvas(output_container, borderwidth=0)
-output_canvas.pack(side=tk.TOP, fill=tk.BOTH, expand=True)
+output_canvas = tk.Canvas(output_container, borderwidth=0,bg="red")
 
 # Create vertical scrollbar linked to the Canvas
 output_scrollbar_y = tk.Scrollbar(output_container, orient=tk.VERTICAL, command=output_canvas.yview)
-output_scrollbar_y.pack(side=tk.RIGHT, fill=tk.Y)
 
 # Create a horizontal scrollbar linked to the Canvas
 output_scrollbar_x = tk.Scrollbar(output_container, orient=tk.HORIZONTAL, command=output_canvas.xview)
+
 output_scrollbar_x.pack(side=tk.BOTTOM, fill=tk.X)
+output_scrollbar_y.pack(side=tk.RIGHT, fill=tk.Y)
+output_canvas.pack(side=tk.LEFT, fill=tk.BOTH, expand=True)
+
 
 output_canvas.configure(yscrollcommand=output_scrollbar_y.set, xscrollcommand=output_scrollbar_x.set)
 
