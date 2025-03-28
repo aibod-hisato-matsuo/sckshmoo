@@ -217,17 +217,37 @@ output_scrollbar_x.pack(side=tk.BOTTOM, fill=tk.X)
 
 output_canvas.configure(xscrollcommand=output_scrollbar_x.set)
 
-# Create the output_frame_inner inside the Canvas
-output_frame_inner1 = tk.Frame(output_canvas)
-output_frame_inner2 = tk.Frame(output_canvas)
-output_canvas.create_window((0, 0), window=output_frame_inner1, anchor='nw')
-output_canvas.create_window((0, 0), window=output_frame_inner2, anchor='nw')
+# Create a parent frame inside the Canvas to hold both plot frames
+parent_frame = tk.Frame(output_canvas)
+output_canvas.create_window((0, 0), window=parent_frame, anchor='nw')
+
+# Create and pack the first inner frame for the first set of plots
+output_frame_inner1 = tk.Frame(parent_frame)
+output_frame_inner1.pack(side=tk.LEFT, padx=5, pady=5, fill=tk.BOTH, expand=True)
+
+# Create and pack the second inner frame for the second set of plots
+output_frame_inner2 = tk.Frame(parent_frame)
+output_frame_inner2.pack(side=tk.LEFT, padx=5, pady=5, fill=tk.BOTH, expand=True)
+
+
+
+## Create the output_frame_inner inside the Canvas
+#output_frame_inner1 = tk.Frame(output_canvas)
+#output_frame_inner2 = tk.Frame(output_canvas)
+#output_canvas.create_window((0, 0), window=output_frame_inner1, anchor='nw')
+#output_canvas.create_window((0, 0), window=output_frame_inner2, anchor='nw')
 
 # Update scrollregion when the output_frame_inner changes size
-def on_output_frame_configure(event):
+def on_parent_frame_configure(event):
     output_canvas.configure(scrollregion=output_canvas.bbox("all"))
 
-output_frame_inner1.bind("<Configure>", on_output_frame_configure)
-output_frame_inner2.bind("<Configure>", on_output_frame_configure)
+parent_frame.bind("<Configure>", on_parent_frame_configure)
+
+#def on_output_frame_configure(event):
+#    output_canvas.configure(scrollregion=output_canvas.bbox("all"))
+#
+#output_frame_inner1.bind("<Configure>", on_output_frame_configure)
+#output_frame_inner2.bind("<Configure>", on_output_frame_configure)
+
 
 root.mainloop()
