@@ -191,7 +191,7 @@ subdirs_label = tk.Label(root, text="Tests:")
 subdirs_label.pack(pady=5)
 
 # Frame to hold the subdirectory buttons
-subdirs_frame = tk.Frame(root)
+subdirs_frame = tk.Frame(root, height="100")
 subdirs_frame.pack(pady=5, fill=tk.BOTH, expand=True)
 
 # Create a container frame for output with horizontal scrollbar
