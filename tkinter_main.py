@@ -2,12 +2,12 @@ import os
 import tkinter as tk
 from tkinter import filedialog, scrolledtext
 import tkinter.font as tkfont
-from analysis.create_shmooplot_files import extract_test_results
-from analysis.fill_missing_vdd import update_files_for_vdd
-from analysis.update_shmoo_range import update_files_for_range
-from analysis.calculate_margin import calculate_files_for_margin
-from analysis.aggregated_shmoo import process_aggregation
-from analysis.xor_shmoo import process_xor
+from shmooapp.analysis.create_shmooplot_files import extract_test_results
+from shmooapp.analysis.fill_missing_vdd import update_files_for_vdd
+from shmooapp.analysis.update_shmoo_range import update_files_for_range
+from shmooapp.analysis.calculate_margin import calculate_files_for_margin
+from shmooapp.analysis.aggregated_shmoo import process_aggregation
+from shmooapp.analysis.xor_shmoo import process_xor
 
 PLOTSDIR = "out.plot"
 ARCHIVEDIR = "out.archive"

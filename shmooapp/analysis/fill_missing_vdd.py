@@ -1,6 +1,6 @@
 import os
 import re
-from analysis.common_utils import VDD_PATTERNS, extract_y_axis_info
+from shmooapp.analysis.common_utils import VDD_PATTERNS, extract_y_axis_info
 
 
 def sanitize_filename(filename):
