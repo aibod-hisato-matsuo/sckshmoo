@@ -33,7 +33,7 @@ def collect_archived_logs(arcroot: str):
     if not arcroot_path.is_dir():
         raise FileNotFoundError(f"The specified arcroot directory does not exist or is not a directory: {arcroot}")
     subdirs = [str(p) for p in arcroot_path.iterdir() if p.is_dir() and not p.is_symlink() and filter_original_dir_only(p)]
-    return subdirs
+    return sorted(subdirs)
 
 def generate_aggfile_name(input_directory,mode):
     out_dirname = Path(input_directory).parent

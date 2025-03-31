@@ -20,6 +20,7 @@ def shmoo_main() -> rx.Component:
                     color=color,
                     bg="white",
                     border=f"1px solid {color}",
+                    on_click=FileState.clear_vars,
                 ),
                 rx.text(
                     "Drag and drop folders here or click to select a folder"
@@ -58,24 +59,16 @@ def shmoo_main() -> rx.Component:
                 rx.text("Step3 : すべてのPlotを生成する",size="5",color_scheme="indigo"),
                 rx.button(
                     "すべてのSHMOOプロットを生成する！",
-                    on_click=FileState.run_all_tests,
+                    on_click=FileState.run_all_and_archive,
                 ),
-                rx.text("登録されたログファイルをアーカイブする"),
-                rx.button(
-                    "Archive plots",
-                    color=color,
-                    bg="white",
-                    border=f"1px solid {color}",
-                    on_click=FileState.run_archive,
-                ),
-            ),
-            rx.text("または"),
-            rx.vstack(
-                rx.text("Step3 : ログファイルのPlotを見る",size="5",color_scheme="indigo"),
+                rx.text("生成したプロットを見る"),
                 rx.hstack(
                     rx.link(
                         rx.button(
                             "SHMOO Plotを見る！",
+                            color=color,
+                            bg="white",
+                            border=f"1px solid {color}",
                             on_click=FileState.handle_upload(
                                 rx.upload_files(upload_id="upload1")
                             ),
@@ -84,24 +77,14 @@ def shmoo_main() -> rx.Component:
                         is_external=False,
                     ),
                     rx.text("    ページを移動します"),
+                    margin_left = "20px",
                 ),
-            rx.text("登録されたログのPlot情報を削除する"),
-            rx.button(
-                "Clear Vars",
-                color=color,
-                bg="white",
-                border=f"1px solid {color}",
-                on_click=FileState.clear_vars,
-            ),
             ),
         ),
         rx.divider(),
         rx.vstack(
             rx.text("Step4 : アーカイブされたログを読み込む",size="5",color_scheme="indigo"),
-            rx.button(
-                "Collect Archived logs",
-                on_click=FileState.get_archived_log,
-            ),
+            rx.text("タップするとログの内容を表示します。（画面遷移します）",color_scheme="indigo"),
             rx.foreach(
                 FileState.archived_logs,
                 lambda log: rx.link(
@@ -115,7 +98,7 @@ def shmoo_main() -> rx.Component:
                     is_external=False,
                 ),
             ),
-            rx.text(f"--> 選択されたテスト：{FileState.curdir}",size="4",color_scheme="gray"),
+            #rx.text(f"--> 選択されたテスト：{FileState.curdir}",size="4",color_scheme="gray"),
         ),
     )
 

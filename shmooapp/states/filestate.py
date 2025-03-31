@@ -3,7 +3,7 @@ import os
 import shutil
 
 from shmooapp.config import PLOTSDIR, ARCHIVEDIR
-from shmooapp.analysis.common_utils import extract_logfilename_from_path,generate_arcdir,collect_archived_logs, generate_aggfile_name
+from shmooapp.analysis.common_utils import extract_logfilename_from_path,generate_arcdir,collect_archived_logs, generate_aggfile_name,create_yyyymmdd_today
 from shmooapp.analysis.create_shmooplot_files import extract_test_results
 from shmooapp.analysis.fill_missing_vdd import update_files_for_vdd
 from shmooapp.analysis.update_shmoo_range import update_files_for_range
@@ -58,6 +58,8 @@ class FileState(rx.State):
                 decoded_data = upload_data.decode("utf-8")
                 file_object.write(decoded_data)
         
+            if outfile in self.file_paths:
+                break
             self.file_paths.append(outfile)
 
     @rx.Var
@@ -86,8 +88,11 @@ class FileState(rx.State):
 
     # process 01
     def run_process01_1(self):
-        filepath = self.pathstr
+        #if not os.path.exists(PLOTSDIR):
+        #    os.makedirs(PLOTSDIR)
+        #outpath = os.path.join(PLOTSDIR,create_yyyymmdd_today())
         outpath = PLOTSDIR
+        filepath = self.pathstr
         self.subdirs = extract_test_results(filepath,outpath)
 
     def p01_read_plots(self, directory: str):
@@ -209,7 +214,7 @@ class FileState(rx.State):
     def get_archived_log(self):
         self.archived_logs = []
         self.archived_logs = collect_archived_logs(ARCHIVEDIR)
-        for dir in self.archived_logs:
+        for dir in sorted(self.archived_logs,reverse=True):
             print(f"{dir}")
 
     def set_archived_log_for_view(self,directory):
@@ -224,3 +229,10 @@ class FileState(rx.State):
         self.aggregation_file_mj = generate_aggfile_name(self.curdir,"Majority")
         self.p01_read_plots(directory)
         self.p02_read_plots()
+
+    # automation
+    def run_all_and_archive(self):
+        self.run_all_tests()
+        self.run_archive()
+        self.get_archived_log()
+

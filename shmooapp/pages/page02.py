@@ -56,6 +56,28 @@ def page02():
                 ),
             ),
         ),
+        rx.vstack(
+            rx.hstack(
+                rx.text("-> Aggregationと各サイトの差分を確認する : ",size="5",color_scheme="indigo"),
+                rx.foreach(
+                    FileState.aggregation_sets,
+                    lambda agg: rx.button(
+                        agg,
+                        on_click=lambda dir=dir: FileState.run_process02_2_calc(agg),
+                        width = "160px"
+                    ),
+                ),
+            ),
+            rx.vstack(
+                rx.text(FileState.xordir),
+                rx.text("XORプロット",size="4",color_scheme="indigo"),
+                rx.flex(
+                    show_plotfiles("xorfile","violet"),
+                ),
+                margin_left = "10px",
+            ),
+            margin_left = "10px",
+        ),
         rx.divider(),
         rx.link("ホームに戻る", href="/"),
         rx.link("Plotへ戻る", href="/proc01"),
